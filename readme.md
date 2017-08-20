@@ -1,6 +1,7 @@
 # Simple Database Challenge
 
 This repo contains my solution to the [Thumbtack’s Simple Database Challenge][sdb].
+
 [sdb]: https://www.thumbtack.com/challenges/simple-database
 
 ## How to execute the code

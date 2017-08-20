@@ -1,9 +1,9 @@
-#Simple Database Challenge
+# Simple Database Challenge
 
 This repo contains my solution to the [Thumbtack’s Simple Database Challenge][sdb].
 [sdb]: https://www.thumbtack.com/challenges/simple-database
 
-##How to execute the code
+## How to execute the code
 
 The solution was implemented using PyCharm and a Python 3.6 interpreter. However, since there is not external dependency, the code could be easily run in one of this two options:
 
@@ -13,7 +13,7 @@ The solution was implemented using PyCharm and a Python 3.6 interpreter. However
 * With a file of commands:
 ```python shell_client.py < $PATH_TO_FILE```
 
-##Thought process
+## Thought process
 
 One of the goals of this implementation is to isolate the database implementation from the client. This will allow in the future reuse the database with different clients.
 
@@ -29,12 +29,12 @@ Another Hash Map is also included to save the number of times that a value is re
 
 To handle transactions, I picked a list of dictionaries (again Hash Maps), used as a stack. The last element of the stack will contain all the needed information to rollback the current (last opened) transaction.
 
-##Performance
-###Operations:
+## Performance
+### Operations:
 
 All operations (```GET```,```SET```,```UNSET```,```NUMEQUALTO```) have a runtime of O(1), thanks to the Hash Maps.
 
-###Transaction:
+### Transaction:
 
 ```BEGIN``` a transaction also have O(1) runtime, since it is only adding an empty transaction to the stack.
 
@@ -42,7 +42,7 @@ Considering M as the number of variables that a transaction will update, the run
 
 In this implementation ```COMMIT``` all the transactions only means to remove the transactions stack.
 
-###Memory usage:
+### Memory usage:
 
 This solution is not optimal speaking of memory usage. We are storing an extra entry per each different value that we have in our data. 
 

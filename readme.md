@@ -1,7 +1,10 @@
 #Simple Database Challenge
+
 This repo contains my solution to the [Thumbtack’s Simple Database Challenge][sdb].
 [sdb]: https://www.thumbtack.com/challenges/simple-database
+
 ##How to execute the code
+
 The solution was implemented using PyCharm and a Python 3.6 interpreter. However, since there is not external dependency, the code could be easily run in one of this two options:
 
 * Interactively:
@@ -11,6 +14,7 @@ The solution was implemented using PyCharm and a Python 3.6 interpreter. However
 ```python shell_client.py < $PATH_TO_FILE```
 
 ##Thought process
+
 One of the goals of this implementation is to isolate the database implementation from the client. This will allow in the future reuse the database with different clients.
 
 Besides, I tried to make the interface between the database and the client independent of the internal solution adopted to store the data. This way, for instance, you could switch to a different data structure in the database without rewrite any client.
@@ -24,6 +28,7 @@ In order to achieve the performance goals, I picked a Hash Map as the main data 
 Another Hash Map is also included to save the number of times that a value is referred by a variable.
 
 To handle transactions, I picked a list of dictionaries (again Hash Maps), used as a stack. The last element of the stack will contain all the needed information to rollback the current (last opened) transaction.
+
 ##Performance
 ###Operations:
 
